@@ -71,5 +71,5 @@ cp "$PKGDIR/include/wayland-util.h"            "$SERVER_OUT/include"
 cp "$PKGDIR/include/wayland-version.h"         "$SERVER_OUT/include"
 
 cd "$DATA"
-tar --transform 's,^data/,,' -czvf "wayland-libs-$VERSION.tar.gz" "$CLIENT_OUT" "$CURSOR_OUT" "$EGL_OUT" "$SERVER_OUT"
+tar --transform 's,^data/,,' --mtime='1970-01-01' --numeric-owner --owner=0 --group=0 --no-xattrs -czvf "wayland-libs-$VERSION.tar.gz" "$CLIENT_OUT" "$CURSOR_OUT" "$EGL_OUT" "$SERVER_OUT"
 echo "Done"
