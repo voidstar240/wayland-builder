@@ -1,0 +1,7 @@
+services:
+  wayland-builder:
+    volumes:
+      - ./data:/data
+    build:
+      context: .
+    pull_policy: build
